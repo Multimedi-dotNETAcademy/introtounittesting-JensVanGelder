@@ -1,15 +1,13 @@
 ﻿using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using TestNinja.Fundamentals;
 
 namespace TestNinja.UnitTests
 {
-    class HtmlFormatterTests
+    internal class HtmlFormatterTests
     {
-        HtmlFormatter htmlFormat;
-        string testText;
+        private HtmlFormatter htmlFormat;
+        private string testText;
+
         [SetUp]
         public void SetUp()
         {
@@ -21,7 +19,7 @@ namespace TestNinja.UnitTests
         public void FormatAsBold_WhenCalled_ReturnStringAsStrong()
         {
             string result = htmlFormat.FormatAsBold(testText);
-            Assert.AreEqual($"<strong>{testText}</strong>",result);
+            Assert.AreEqual($"<strong>{testText}</strong>", result);
         }
     }
 }

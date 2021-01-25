@@ -1,12 +1,9 @@
 ﻿using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using TestNinja.Fundamentals;
 
 namespace TestNinja.UnitTests
 {
-    class ReservationTests
+    internal class ReservationTests
     {
         private Reservation _reservation;
         private Reservation _reservationMadeByUser;
@@ -18,7 +15,7 @@ namespace TestNinja.UnitTests
         {
             _reservation = new Reservation();
             _user = new User();
-            _adminUser = new User() {IsAdmin = true };
+            _adminUser = new User() { IsAdmin = true };
             _reservationMadeByUser = new Reservation() { MadeBy = _user };
         }
 
@@ -28,12 +25,14 @@ namespace TestNinja.UnitTests
             bool result = _reservation.CanBeCancelledBy(_adminUser);
             Assert.IsTrue(result);
         }
+
         [Test]
         public void CanBeCancelledBy_WhenCalledByMadeByUser_ReturnsTrue()
         {
             bool result = _reservationMadeByUser.CanBeCancelledBy(_user);
             Assert.IsTrue(result);
         }
+
         [Test]
         public void CanBeCancelledBy_WhenCalledByDifferentUser_ReturnsFalse()
         {

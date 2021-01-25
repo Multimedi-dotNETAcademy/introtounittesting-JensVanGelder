@@ -37,6 +37,7 @@ namespace TestNinja.UnitTests
 
             Assert.AreEqual(expectedResult, result);
         }
+
         [Test]
         public void GetOddNumbers_WhenGivenLimitHigherThanZero_ReturnOddNumbersArray()
         {

@@ -1,15 +1,11 @@
 ﻿using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using TestNinja.Fundamentals;
 
 namespace TestNinja.UnitTests
 {
-    class FizzBuzzTests
+    internal class FizzBuzzTests
     {
-
-        [TestCase(7,"7")]
+        [TestCase(7, "7")]
         [TestCase(3, "Fizz")]
         [TestCase(5, "Buzz")]
         [TestCase(15, "FizzBuzz")]
